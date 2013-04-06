@@ -1,0 +1,194 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+/*********************************************
+ * MIXINS
+ *********************************************/
+
+.transform (@params) {
+  -webkit-transform: @params;
+	   -moz-transform: @params;
+	    -ms-transform: @params;
+	     -o-transform: @params;
+	        transform: @params;
+}
+
+.transition(@params) {
+  -webkit-transition: @params;
+	   -moz-transition: @params;
+	    -ms-transition: @params;
+	     -o-transition: @params;
+	        transition: @params;
+}
+
+/*********************************************
+ * COMMON ELEMENTS
+ *********************************************/
+
+.reveal section .video {
+  border-radius: 10px;
+  box-shadow: 0 0 30px #555;
+  background-color: black;
+}
+
+.reveal .slides section img {
+  border-radius: 10px;
+  box-shadow: 0 0 30px #555;
+  
+  &.left {
+    float: left;
+  }
+  
+  &.right {
+    float: right;
+  }
+  
+  &.half-height {
+    height: 50%;
+    width: auto;
+  }
+  
+  &.half-width {
+    height: auto;
+    width: 50%;
+  }
+  
+  &.fill-width {
+    height: auto;
+    width: 100%;
+    max-height: none;
+  }
+  
+  &.fill-height {
+    height: 100%;
+    width: auto;
+    max-width: none;
+  }
+}
+
+.reveal section {
+  ul, li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  pre {
+    &.no-scroll {
+      overflow: visible;
+      .transform(translateY(-30%));
+      width: 100%;
+      box-shadow: none;
+      font-size: 12px;
+    }
+    
+    &.no-background {
+      background: none;
+      color: black;
+    }
+  }
+  
+  a.license {
+    font-size: small;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: -25px;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: inherit;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-shadow: inherit;
+}
+
+h1 emph {
+  color: #004f75;
+}
+
+.reveal h2 {
+  margin: 0 0 20px 0;
+  color: #383d3d;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-shadow: none;
+}
+
+
+/*********************************************
+ * TRANSITIONS
+ *********************************************/
+
+/* Zoom transition for selected slide sections or subsections */
+
+.reveal .slides>section>section.zoom,
+.reveal .slides>section.zoom>section {
+  
+  &.past {
+    opacity: 0;
+  	visibility: hidden;
+  	.transform (scale(16));
+  }
+  
+  &.future {
+    opacity: 0;
+  	visibility: hidden;
+  	.transform (scale(0.2));
+  }
+}
+
+/*********************************************
+ * FRAGMENT ANIMATIONS
+ *********************************************/
+
+.reveal .slides section .fragment {
+  &.scroll {
+    .transition(all 10000ms linear);
+    opacity: 1;
+
+    &.visible {
+     .transform(translateY(-90%));
+    }
+  }
+  
+  &.shrink-much {
+    opacity: 1;
+    .transition(all 1s ease);
+
+    &.visible {
+      .transform(translateZ(-2000px));
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  
+  &.rotate {
+    opacity: 1;
+    .transition(all 1s ease);
+
+    &.left.visible {
+  		.transform (translate(200%, -40%) rotateZ(-90deg));
+  	}
+
+  	&.right.visible {
+  		.transform (rotateZ(90deg));
+  	}
+  }
+}

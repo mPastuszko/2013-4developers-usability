@@ -1,0 +1,183 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+/*********************************************
+ * MIXINS
+ *********************************************/
+/*********************************************
+ * COMMON ELEMENTS
+ *********************************************/
+.reveal section .video {
+  border-radius: 10px;
+  box-shadow: 0 0 30px #555;
+  background-color: black;
+}
+.reveal .slides section img {
+  border-radius: 10px;
+  box-shadow: 0 0 30px #555;
+}
+.reveal .slides section img.left {
+  float: left;
+}
+.reveal .slides section img.right {
+  float: right;
+}
+.reveal .slides section img.half-height {
+  height: 50%;
+  width: auto;
+}
+.reveal .slides section img.half-width {
+  height: auto;
+  width: 50%;
+}
+.reveal .slides section img.fill-width {
+  height: auto;
+  width: 100%;
+  max-height: none;
+}
+.reveal .slides section img.fill-height {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+.reveal section {
+  /*height: 3%;*/
+}
+.reveal section ul,
+.reveal section li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.reveal section pre.no-scroll {
+  overflow: visible;
+  -webkit-transform: translateY(-30%);
+  -moz-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  -o-transform: translateY(-30%);
+  transform: translateY(-30%);
+  width: 100%;
+  box-shadow: none;
+  font-size: 12px;
+}
+.reveal section pre.no-background {
+  background: none;
+  color: black;
+}
+.reveal section a.license {
+  font-size: small;
+}
+.reveal section footer {
+  position: absolute;
+  bottom: -25px;
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: inherit;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-shadow: inherit;
+}
+h1 emph {
+  color: #004f75;
+}
+.reveal h2 {
+  margin: 0 0 20px 0;
+  color: #383d3d;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-shadow: none;
+}
+/*********************************************
+ * TRANSITIONS
+ *********************************************/
+/* Zoom transition for selected slide sections or subsections */
+.reveal .slides > section > section.zoom.past,
+.reveal .slides > section.zoom > section.past {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(16);
+  -moz-transform: scale(16);
+  -ms-transform: scale(16);
+  -o-transform: scale(16);
+  transform: scale(16);
+}
+.reveal .slides > section > section.zoom.future,
+.reveal .slides > section.zoom > section.future {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  -o-transform: scale(0.2);
+  transform: scale(0.2);
+}
+/*********************************************
+ * FRAGMENT ANIMATIONS
+ *********************************************/
+.reveal .slides section .fragment.scroll {
+  -webkit-transition: all 10000ms linear;
+  -moz-transition: all 10000ms linear;
+  -ms-transition: all 10000ms linear;
+  -o-transition: all 10000ms linear;
+  transition: all 10000ms linear;
+  opacity: 1;
+}
+.reveal .slides section .fragment.scroll.visible {
+  -webkit-transform: translateY(-90%);
+  -moz-transform: translateY(-90%);
+  -ms-transform: translateY(-90%);
+  -o-transform: translateY(-90%);
+  transform: translateY(-90%);
+}
+.reveal .slides section .fragment.shrink-much {
+  opacity: 1;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.reveal .slides section .fragment.shrink-much.visible {
+  -webkit-transform: translateZ(-2000px);
+  -moz-transform: translateZ(-2000px);
+  -ms-transform: translateZ(-2000px);
+  -o-transform: translateZ(-2000px);
+  transform: translateZ(-2000px);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.reveal .slides section .fragment.rotate {
+  opacity: 1;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.reveal .slides section .fragment.rotate.left.visible {
+  -webkit-transform: translate(200%, -40%) rotateZ(-90deg);
+  -moz-transform: translate(200%, -40%) rotateZ(-90deg);
+  -ms-transform: translate(200%, -40%) rotateZ(-90deg);
+  -o-transform: translate(200%, -40%) rotateZ(-90deg);
+  transform: translate(200%, -40%) rotateZ(-90deg);
+}
+.reveal .slides section .fragment.rotate.right.visible {
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
