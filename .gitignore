@@ -1,5 +1,8 @@
 .DS_Store
 .svn
+Design
+Resources
+
 log/*.log
 tmp/**
 node_modules/
